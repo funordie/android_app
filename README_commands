@@ -1,0 +1,3 @@
+#JNI build header file
+javah -v -jni -classpath /home/users/ipaev/workspace_adt-bundle/MyAndroidApp/bin/classes:/home/users/ipaev/adt-bundle-linux-x86_64/sdk/platforms/android-17/android.jar com.example.myandroidapp.MainActivity
+

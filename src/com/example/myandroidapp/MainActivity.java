@@ -3,15 +3,25 @@ package com.example.myandroidapp;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
+	static
+	{
+		System.loadLibrary("hello-jni");
+	}
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        TextView tv = new TextView(this);
+        tv.setText(messageFromNativeCode());
+        setContentView(tv);
     }
-
+    
+    public native String messageFromNativeCode();
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -19,5 +29,4 @@ public class MainActivity extends Activity {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
-    
 }
