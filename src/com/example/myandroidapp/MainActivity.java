@@ -25,20 +25,67 @@ public class MainActivity extends Activity {
         return true;
     }
     
-    public void OpenFileCmd(View v) {
+    public void ReadFileCmd(View v) {
         //get text from edit box
     	EditText mEdit;
     	String strFile, strRes;
+    	int res;
+    	TextView mView;
+    	
         mEdit   = (EditText)findViewById(R.id.editText1);
         strFile = mEdit.getText().toString();
     	
-    	//call open file 
-    	OpenFileJNI myOpenFile = new OpenFileJNI();
-    	strRes = myOpenFile.OpenFileFunctionJNI(strFile);
-    	
+        //call FileOperation
+        FileOperationJNI myFileOp = new FileOperationJNI();
+        //open file
+        res = myFileOp.OpenFile(strFile, 0);
+        if(res == 0) {
+	        //read file
+	        strRes = myFileOp.ReadString();
+	        //close file
+	        myFileOp.CloseFile();
+        }
+        else {
+        	strRes = "Cannot open file";
+        }
     	//send return string to text view
-        TextView tv = new TextView(this);
-        tv.setText(strRes);
-        setContentView(tv);
+        mView   = (TextView)findViewById(R.id.textView2);
+        mView.setText(strRes);
+    }
+    
+    public void WriteFileCmd(View v) {
+        //get text from edit box
+    	EditText mEdit;
+    	String strWrite, strFile, strRes;
+    	int res;
+    	TextView mView;
+    	
+    	strRes = "Write Srting OK!";
+    	
+    	mEdit   = (EditText)findViewById(R.id.editText1);
+        strFile = mEdit.getText().toString();
+        
+        mEdit   = (EditText)findViewById(R.id.editText2);
+        strWrite = mEdit.getText().toString();
+    	
+        //call FileOperation
+        FileOperationJNI myFileOp = new FileOperationJNI();
+        //open file
+        res = myFileOp.OpenFile(strFile, 1);
+        if(res == 0) {
+	        //write to file
+	        res = myFileOp.WriteString(strWrite);
+	        if(res != 0) {
+	        	strRes = "Cannot write to file";
+	        }
+	        //close file
+	        myFileOp.CloseFile();
+        }
+        else {
+        	strRes = "Cannot open file";
+        }
+    	//send return string to text view
+        mView   = (TextView)findViewById(R.id.textView2);
+        mView.setText(strRes);
     }
 }

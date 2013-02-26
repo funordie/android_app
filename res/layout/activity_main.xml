@@ -22,7 +22,8 @@
         android:layout_below="@+id/textView1"
         android:layout_marginTop="71dp"
         android:ems="10"
-        android:inputType="text" >
+        android:inputType="text"
+        android:text="@string/def_read_file" >
 
         <requestFocus />
     </EditText>
@@ -33,7 +34,36 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/editText1"
         android:layout_alignParentRight="true"
-        android:text="@string/open_button" 
-        android:onClick = "OpenFileCmd"/>
+        android:onClick="ReadFileCmd"
+        android:text="@string/read_btn" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button2"
+        android:layout_alignLeft="@+id/editText1"
+        android:ems="10"
+        android:inputType="text"
+        android:text="@string/def_write_string" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/button1"
+        android:layout_below="@+id/editText1"
+        android:layout_marginTop="30dp"
+        android:onClick="WriteFileCmd"
+        android:text="@string/write_btn" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/button2"
+        android:layout_below="@+id/editText2"
+        android:layout_marginTop="41dp"
+        android:text="TextView" />
 
 </RelativeLayout>
