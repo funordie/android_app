@@ -1,10 +1,10 @@
 #include <string.h>
 #include <jni.h>
 #include <stdio.h>
-#include "com_example_myandroidapp_OpenFile_JNI.h"
+#include "com_example_myandroidapp_OpenFileJNI.h"
 #include <android/log.h>
 
-JNIEXPORT jstring JNICALL Java_com_example_myandroidapp_OpenFile_1JNI_OpenFileFunction_1JNI
+JNIEXPORT jstring JNICALL Java_com_example_myandroidapp_OpenFileJNI_OpenFileFunctionJNI
   (JNIEnv *env, jobject thiz, jstring inJNIStr)
 {
 	char outStr[256];

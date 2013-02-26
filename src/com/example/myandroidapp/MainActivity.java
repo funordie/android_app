@@ -33,8 +33,8 @@ public class MainActivity extends Activity {
         strFile = mEdit.getText().toString();
     	
     	//call open file 
-    	OpenFile_JNI myOpenFile = new OpenFile_JNI();
-    	strRes = myOpenFile.OpenFileFunction_JNI(strFile);
+    	OpenFileJNI myOpenFile = new OpenFileJNI();
+    	strRes = myOpenFile.OpenFileFunctionJNI(strFile);
     	
     	//send return string to text view
         TextView tv = new TextView(this);

@@ -1,6 +1,6 @@
 package com.example.myandroidapp;
 
-public class Hello_JNI {
+public class HelloJNI {
 	static
 	{
 		System.loadLibrary("hello-jni");

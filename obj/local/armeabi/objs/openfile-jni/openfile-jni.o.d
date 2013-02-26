@@ -19,7 +19,7 @@
  /home/users/ipaev/adt-bundle-linux-x86_64/ndk/platforms/android-14/arch-arm/usr/include/linux/types.h \
  /home/users/ipaev/adt-bundle-linux-x86_64/ndk/platforms/android-14/arch-arm/usr/include/machine/kernel.h \
  /home/users/ipaev/adt-bundle-linux-x86_64/ndk/platforms/android-14/arch-arm/usr/include/sys/sysmacros.h \
- /home/users/ipaev/workspace_adt-bundle/MyAndroidApp/jni/com_example_myandroidapp_OpenFile_JNI.h \
+ /home/users/ipaev/workspace_adt-bundle/MyAndroidApp/jni/com_example_myandroidapp_OpenFileJNI.h \
  /home/users/ipaev/adt-bundle-linux-x86_64/ndk/platforms/android-14/arch-arm/usr/include/android/log.h
 
 /home/users/ipaev/adt-bundle-linux-x86_64/ndk/platforms/android-14/arch-arm/usr/include/string.h:
@@ -60,6 +60,6 @@
 
 /home/users/ipaev/adt-bundle-linux-x86_64/ndk/platforms/android-14/arch-arm/usr/include/sys/sysmacros.h:
 
-/home/users/ipaev/workspace_adt-bundle/MyAndroidApp/jni/com_example_myandroidapp_OpenFile_JNI.h:
+/home/users/ipaev/workspace_adt-bundle/MyAndroidApp/jni/com_example_myandroidapp_OpenFileJNI.h:
 
 /home/users/ipaev/adt-bundle-linux-x86_64/ndk/platforms/android-14/arch-arm/usr/include/android/log.h:

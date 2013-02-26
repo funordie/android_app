@@ -1,9 +1,9 @@
 package com.example.myandroidapp;
 
-public class OpenFile_JNI {
+public class OpenFileJNI {
 	static
 	{
 		System.loadLibrary("openfile-jni");
 	}
-	public native String OpenFileFunction_JNI(String msg);
+	public native String OpenFileFunctionJNI(String msg);
 }
