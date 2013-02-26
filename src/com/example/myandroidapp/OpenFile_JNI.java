@@ -5,5 +5,5 @@ public class OpenFile_JNI {
 	{
 		System.loadLibrary("openfile-jni");
 	}
-	public native String OpenFile_JNI(String msg);
+	public native String OpenFileFunction_JNI(String msg);
 }

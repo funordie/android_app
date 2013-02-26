@@ -9,10 +9,10 @@ extern "C" {
 #endif
 /*
  * Class:     com_example_myandroidapp_OpenFile_JNI
- * Method:    OpenFile_JNI
+ * Method:    OpenFileFunction_JNI
  * Signature: (Ljava/lang/String;)Ljava/lang/String;
  */
-JNIEXPORT jstring JNICALL Java_com_example_myandroidapp_OpenFile_1JNI_OpenFile_1JNI
+JNIEXPORT jstring JNICALL Java_com_example_myandroidapp_OpenFile_1JNI_OpenFileFunction_1JNI
   (JNIEnv *, jobject, jstring);
 
 #ifdef __cplusplus
