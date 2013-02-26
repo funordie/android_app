@@ -32,7 +32,7 @@ public class MainActivity extends Activity {
     	int res;
     	TextView mView;
     	
-        mEdit   = (EditText)findViewById(R.id.editText1);
+        mEdit   = (EditText)findViewById(R.id.editReadFilePath);
         strFile = mEdit.getText().toString();
     	
         //call FileOperation
@@ -49,7 +49,7 @@ public class MainActivity extends Activity {
         	strRes = "Cannot open file";
         }
     	//send return string to text view
-        mView   = (TextView)findViewById(R.id.textView2);
+        mView   = (TextView)findViewById(R.id.textResult);
         mView.setText(strRes);
     }
     
@@ -62,10 +62,10 @@ public class MainActivity extends Activity {
     	
     	strRes = "Write Srting OK!";
     	
-    	mEdit   = (EditText)findViewById(R.id.editText1);
+    	mEdit   = (EditText)findViewById(R.id.editReadFilePath);
         strFile = mEdit.getText().toString();
         
-        mEdit   = (EditText)findViewById(R.id.editText2);
+        mEdit   = (EditText)findViewById(R.id.editWriteString);
         strWrite = mEdit.getText().toString();
     	
         //call FileOperation
@@ -85,7 +85,7 @@ public class MainActivity extends Activity {
         	strRes = "Cannot open file";
         }
     	//send return string to text view
-        mView   = (TextView)findViewById(R.id.textView2);
+        mView   = (TextView)findViewById(R.id.textResult);
         mView.setText(strRes);
     }
 }
