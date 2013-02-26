@@ -7,7 +7,7 @@
     <string name="open_button">Open</string>
     <string name="read_btn">read file</string>
     <string name="write_btn">Write File</string>
-    <string name="def_read_file">/data/test_file</string>
+    <string name="def_read_file">/sdcard/test_file</string>
     <string name="def_write_string">HELLO WORLD!</string>
 
 </resources>
