@@ -1,5 +1,10 @@
 #include <string.h>
+#ifdef __cplusplus
+#undef __cplusplus
+#endif
+
 #include <jni.h>
+#include <errno.h>
 #include <stdio.h>
 #include "com_example_myandroidapp_FileOperationJNI.h"
 #include <android/log.h>
@@ -7,9 +12,11 @@
 //global variables
 FILE* file;
 
-JNIEXPORT jint JNICALL Java_com_example_myandroidapp_FileOperationJNI_OpenFile
+JNIEXPORT jstring JNICALL Java_com_example_myandroidapp_FileOperationJNI_OpenFile
   (JNIEnv *env, jobject thiz, jstring jinpStr, jint perm)
 {
+	char s[128];
+
 	const char * inpStr = (*env)->GetStringUTFChars(env, jinpStr, NULL);
 	__android_log_write(ANDROID_LOG_ERROR, "OpenFile:", inpStr );
 
@@ -27,19 +34,23 @@ JNIEXPORT jint JNICALL Java_com_example_myandroidapp_FileOperationJNI_OpenFile
 		break;
 	default:
 		__android_log_write(ANDROID_LOG_ERROR, "File Open:", "perm:unsupported");
-		return -1;
+		return (*env)->NewStringUTF(env, "unsupported file open mode");
 	}
 
 	if (file == NULL) {
-		__android_log_write(ANDROID_LOG_ERROR, "File Open:", "cannot open file");
+		sprintf(s,"cannot open file: %s",strerror(errno));
 		goto cleanup;
 	}
 	__android_log_write(ANDROID_LOG_ERROR, "File Open:", "DONE" );
-	return 0;
+	return (*env)->NewStringUTF(env, "OK");
 
 	cleanup:
-		(*env)->ReleaseStringUTFChars(env,jinpStr,inpStr);
-		return -1;
+
+	sprintf(s,"cannot open file: %s",strerror(errno));
+	__android_log_write(ANDROID_LOG_ERROR, "File Open:", s);
+
+	(*env)->ReleaseStringUTFChars(env,jinpStr,inpStr);
+	return (*env)->NewStringUTF(env, s);
 
 }
 
@@ -48,7 +59,7 @@ JNIEXPORT jint JNICALL Java_com_example_myandroidapp_FileOperationJNI_OpenFile
  * Method:    CloseFile
  * Signature: ()Ljava/lang/String;
  */
-JNIEXPORT jint JNICALL Java_com_example_myandroidapp_FileOperationJNI_CloseFile
+JNIEXPORT jstring JNICALL Java_com_example_myandroidapp_FileOperationJNI_CloseFile
   (JNIEnv *env, jobject thiz)
 {
 	if (file == NULL)
@@ -63,7 +74,7 @@ JNIEXPORT jint JNICALL Java_com_example_myandroidapp_FileOperationJNI_CloseFile
  * Method:    WriteString
  * Signature: (Ljava/lang/String;)Ljava/lang/String;
  */
-JNIEXPORT jint JNICALL Java_com_example_myandroidapp_FileOperationJNI_WriteString
+JNIEXPORT jstring JNICALL Java_com_example_myandroidapp_FileOperationJNI_WriteString
   (JNIEnv *env, jobject thiz, jstring jinpStr)
 {
 	const char * inpStr = (*env)->GetStringUTFChars(env, jinpStr, NULL);

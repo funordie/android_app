@@ -1,0 +1,4 @@
+set solib-search-path ./obj/local/armeabi
+directory /home/users/ipaev/adt-bundle-linux-x86_64/ndk/platforms/android-14/arch-arm/usr/include jni /home/users/ipaev/adt-bundle-linux-x86_64/ndk/sources/cxx-stl/system
+file ./obj/local/armeabi/app_process
+target remote :5039

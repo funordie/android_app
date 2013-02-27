@@ -10,25 +10,25 @@ extern "C" {
 /*
  * Class:     com_example_myandroidapp_FileOperationJNI
  * Method:    OpenFile
- * Signature: (Ljava/lang/String;I)I
+ * Signature: (Ljava/lang/String;I)Ljava/lang/String;
  */
-JNIEXPORT jint JNICALL Java_com_example_myandroidapp_FileOperationJNI_OpenFile
+JNIEXPORT jstring JNICALL Java_com_example_myandroidapp_FileOperationJNI_OpenFile
   (JNIEnv *, jobject, jstring, jint);
 
 /*
  * Class:     com_example_myandroidapp_FileOperationJNI
  * Method:    CloseFile
- * Signature: ()I
+ * Signature: ()Ljava/lang/String;
  */
-JNIEXPORT jint JNICALL Java_com_example_myandroidapp_FileOperationJNI_CloseFile
+JNIEXPORT jstring JNICALL Java_com_example_myandroidapp_FileOperationJNI_CloseFile
   (JNIEnv *, jobject);
 
 /*
  * Class:     com_example_myandroidapp_FileOperationJNI
  * Method:    WriteString
- * Signature: (Ljava/lang/String;)I
+ * Signature: (Ljava/lang/String;)Ljava/lang/String;
  */
-JNIEXPORT jint JNICALL Java_com_example_myandroidapp_FileOperationJNI_WriteString
+JNIEXPORT jstring JNICALL Java_com_example_myandroidapp_FileOperationJNI_WriteString
   (JNIEnv *, jobject, jstring);
 
 /*

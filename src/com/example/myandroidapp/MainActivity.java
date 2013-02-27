@@ -29,7 +29,6 @@ public class MainActivity extends Activity {
         //get text from edit box
     	EditText mEdit;
     	String strFile, strRes;
-    	int res;
     	TextView mView;
     	
         mEdit   = (EditText)findViewById(R.id.editReadFilePath);
@@ -38,16 +37,14 @@ public class MainActivity extends Activity {
         //call FileOperation
         FileOperationJNI myFileOp = new FileOperationJNI();
         //open file
-        res = myFileOp.OpenFile(strFile, 0);
-        if(res == 0) {
+        strRes = myFileOp.OpenFile(strFile, 0);
+        if("OK".equals(strRes)) {
 	        //read file
 	        strRes = myFileOp.ReadString();
 	        //close file
 	        myFileOp.CloseFile();
         }
-        else {
-        	strRes = "Cannot open file";
-        }
+
     	//send return string to text view
         mView   = (TextView)findViewById(R.id.textResult);
         mView.setText(strRes);
@@ -71,8 +68,8 @@ public class MainActivity extends Activity {
         //call FileOperation
         FileOperationJNI myFileOp = new FileOperationJNI();
         //open file
-        res = myFileOp.OpenFile(strFile, 1);
-        if(res == 0) {
+        strRes = myFileOp.OpenFile(strFile, 1);
+        if("OK".equals(strRes)) {
 	        //write to file
 	        res = myFileOp.WriteString(strWrite);
 	        if(res != 0) {
@@ -81,9 +78,7 @@ public class MainActivity extends Activity {
 	        //close file
 	        myFileOp.CloseFile();
         }
-        else {
-        	strRes = "Cannot open file";
-        }
+
     	//send return string to text view
         mView   = (TextView)findViewById(R.id.textResult);
         mView.setText(strRes);
